@@ -42,12 +42,14 @@ router.post('/', validateLogin, asyncHandler(async (req, res, next) => {
 }),
 );
 
+// Log out
 router.delete('/', (_req, res) => {
     res.clearCookie('token');
     return res.json({ message: 'success' });
 }
 );
 
+// Restore user
 router.get('/', restoreUser, (req, res) => {
     const { user } = req;
     if (user) {
