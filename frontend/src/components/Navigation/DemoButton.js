@@ -7,20 +7,16 @@ const Demo = () => {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
 
-    const onSubmit = (e) => {
+    const handleClick = (e) => {
         e.preventDefault();
         setCredential('Demo-lition');
         setPassword('password');
 
-        return dispatch(sessionActions.login({ credential, password }))
-            .catch(async (res) => {
-                const data = await res.json();
-                // if (data && data.errors) setErrors(data.errors);
-            });
+        return dispatch(sessionActions.login({ credential, password }));
     };
 
     return (
-        <button onSubmit={onSubmit} type='submit'>Demo</button>
+        <button onClick={handleClick} type='submit'>Demo</button>
     )
 };
 
