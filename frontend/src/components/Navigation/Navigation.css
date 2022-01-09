@@ -1,8 +1,24 @@
+@font-face {
+    font-family: 'modern_sanslight';
+    src: url('../../../public/fonts/modernsans-light-webfont.woff2') format('woff2'),
+         url('../../../public/fonts/modernsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 nav a {
     margin: 0 20px;
+    font-family: 'modern_sanslight';
+    text-decoration: none;
 }
 
 nav li {
     list-style: none;
 }
 
+.demo {
+    font-family: 'modern_sanslight';
+    border-style: none;
+    background: none;
+}

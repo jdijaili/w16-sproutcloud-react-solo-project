@@ -19,7 +19,7 @@ const Demo = () => {
     };
 
     return (
-        <button onClick={handleClick} type='submit'>Demo</button>
+        <button onClick={handleClick} type='submit' className='demo'>Demo</button>
     )
 };
 

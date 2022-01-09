@@ -1,5 +1,49 @@
-.responsive {
-    width: 100%;
-    height: auto;
+@font-face {
+    font-family: 'stormline_personal_use_onlyMd';
+    src: url('../../../public/fonts/stormline_personal_use_only-medium-webfont.woff2') format('woff2'),
+         url('../../../public/fonts/stormline_personal_use_only-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
+@font-face {
+    font-family: 'modern_sanslight';
+    src: url('../../../public/fonts/modernsans-light-webfont.woff2') format('woff2'),
+         url('../../../public/fonts/modernsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'positions_by_arixboredregular';
+    src: url('../../../public/fonts/positionsbyarixbored-regular_-webfont.woff2') format('woff2'),
+         url('../../../public/fonts/positionsbyarixbored-regular_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: "stormline_personal_use_onlyMd";
+}
+
+h3 {
+    font-family: 'modern_sanslight';
+}
+
+img {
+    border: 3px #1b3d2f;
+    border-style: dotted dashed solid double;;
+}
+
+span {
+    font-family: 'positions_by_arixboredregular';
+}
