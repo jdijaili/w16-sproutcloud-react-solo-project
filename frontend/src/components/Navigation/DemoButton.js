@@ -12,7 +12,10 @@ const Demo = () => {
         setCredential('Demo-lition');
         setPassword('password');
 
-        return dispatch(sessionActions.login({ credential, password }));
+        dispatch(sessionActions.login({ credential, password }))
+            .catch(async (res) => {
+                const data = await res.json();
+            });
     };
 
     return (
