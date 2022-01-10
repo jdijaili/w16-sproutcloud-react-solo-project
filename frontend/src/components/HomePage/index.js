@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import AudioPlayer from "../AudioPlayer";
+import Songs from "../SongsPage/SongsPage";
 import './Home.css'
 
 const Home = ({ isLoaded }) => {
@@ -8,7 +9,7 @@ const Home = ({ isLoaded }) => {
     let homeContent;
     if (sessionUser) {
         homeContent = (
-            <AudioPlayer />
+            <Songs />
         )
     } else {
         homeContent = (

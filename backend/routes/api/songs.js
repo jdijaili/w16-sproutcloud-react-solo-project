@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
 
-const db = require('../../db/models');
+const { Song } = require('../../db/models');
 
-router.get('/songs', asyncHandler( async (req, res) => {
-    const songs = await db.Songs.findAll();
+router.get('/', asyncHandler(async (req, res) => {
+    const songs = await Song.findAll();
     res.json(songs);
 }));
 
