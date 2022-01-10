@@ -67,14 +67,16 @@ module.exports = (sequelize, DataTypes) => {
       references: { model: "Users" }
     }
   }, {});
-  Song.associate = function(models) {
+  Song.associate = function (models) {
+    Song.belongsTo(models.User, { foreignKey: 'userId' });
+
     const columnMapping = {
       through: 'PlaylistSongJoin',
       otherKey: 'playlistId',
       foreignKey: 'songId'
     };
 
-    Song.belongsToMany(models.User, columnMapping)
+    Song.belongsToMany(models.User, columnMapping);
   };
   return Song;
 };
