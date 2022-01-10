@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jdijaili/w16-plantcloud-react-solo-project/issues"
   },
-  "homepage": "https://github.com/jdijaili/w16-plantcloud-react-solo-project#readme"
+  "homepage": "https://github.com/jdijaili/w16-plantcloud-react-solo-project#readme",
+  "dependencies": {
+    "react-icons": "^4.3.1"
+  }
 }
