@@ -1,3 +1,4 @@
+import { csrfFetch } from "./csrf";
 
 // ACTIONS
 const LOAD_SONGS = 'songs/LOAD_SONGS';
@@ -21,7 +22,7 @@ export const addSong = (newSong) => {
 
 // THUNK CREATORS
 export const getAllSongs = () => async (dispatch) => {
-    const res = await fetch('/api/songs');
+    const res = await csrfFetch('/api/songs');
     // console.log(res);
     const data = await res.json();
     // console.log(data);
