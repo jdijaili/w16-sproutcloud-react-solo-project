@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import AudioPlayer from "../AudioPlayer";
 import './Home.css'
 
 const Home = ({ isLoaded }) => {
