@@ -5,6 +5,8 @@ const LOAD_SONGS = 'songs/LOAD_SONGS';
 
 const ADD_SONG = 'songs/ADD_SONG';
 
+const EDIT_SONG = 'songs/EDIT_SONG';
+
 // ACTION CREATORS
 export const loadSongs = (songs) => {
     return {
@@ -19,6 +21,13 @@ export const addSong = (newSong) => {
         newSong
     }
 }
+
+export const editSong = (song) => {
+    return {
+        type: EDIT_SONG,
+        song
+    }
+};
 
 // THUNK CREATORS
 export const getAllSongs = () => async (dispatch) => {
@@ -37,7 +46,9 @@ export const addNewSong = (newSong) => async (dispatch) => {
     const data = await res.json();
     dispatch(addSong(data));
     return data;
-}
+};
+
+
 
 // INITIAL STATE
 const initialState = {

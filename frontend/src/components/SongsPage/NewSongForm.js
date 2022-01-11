@@ -14,6 +14,8 @@ const NewSongForm = () => {
     const [songUrl, setSongUrl] = useState('');
     const [imgUrl, setImgUrl] = useState('');
 
+    const [errors, setErrors] = useState([]);
+
     const updateTitle = (e) => setTitle(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
     const updateSongUrl = (e) => setSongUrl(e.target.value);
@@ -39,7 +41,11 @@ const NewSongForm = () => {
             userId
         };
 
-        const createdSong = await dispatch(addNewSong(newSong));
+        const createdSong = await dispatch(addNewSong(newSong))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
 
         if (createdSong) {
             console.log(createdSong);
@@ -50,6 +56,9 @@ const NewSongForm = () => {
 
     return (
         <div>
+            <ul>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+            </ul>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='title'>Title</label>
                 <input

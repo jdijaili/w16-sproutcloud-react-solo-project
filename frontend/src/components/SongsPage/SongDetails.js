@@ -4,7 +4,7 @@ const SongDetails = ({ song }) => {
     return (
         <>
             <p>{song.title}</p>
-            <img alt={`${song.title}'s art`} src={song.imgUrl}/>
+            <img className='songArt' alt={`${song.title}'s art`} src={song.imgUrl}/>
         </>
     )
 };

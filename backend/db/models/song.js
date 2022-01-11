@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Title must not be empty'
         },
         len: {
-          args: [1, 100],
-          msg: 'Title must not be more than 100 characters'
+          args: [1, 50],
+          msg: 'Title must not be more than 50 characters'
         }
       }
     },
