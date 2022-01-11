@@ -14,6 +14,7 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <NavLink to='/songs'>Songs</NavLink>
+                <NavLink to='/upload'>Upload</NavLink>
                 <ProfileButton user={sessionUser} />
             </>
         );

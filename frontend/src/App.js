@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/HomePage";
 import './App.css';
 import Songs from "./components/SongsPage/SongsPage";
+import NewSongForm from "./components/SongsPage/NewSongForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/songs">
             <Songs />
+          </Route>
+          <Route path="/upload">
+            <NewSongForm />
           </Route>
         </Switch>
       )}
