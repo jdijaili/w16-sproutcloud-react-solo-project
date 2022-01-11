@@ -22,10 +22,10 @@ const addSong = (newSong) => {
     }
 }
 
-const editSong = (song) => {
+const updateSong = (editedSong) => {
     return {
         type: EDIT_SONG,
-        song
+        editedSong
     }
 };
 
@@ -48,7 +48,7 @@ export const addNewSong = (newSong) => async (dispatch) => {
     return data;
 };
 
-export const editSong = (editedSong) => {
+export const editSong = async (editedSong) => {
     const res = await csrfFetch(`/api/songs/${editedSong.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ export const editSong = (editedSong) => {
     });
 
     const data = await res.json();
-    dispatch(editSong(data));
+    dispatch(updateSong(data));
     return data;
 };
 
@@ -73,7 +73,9 @@ const songsReducer = (state = initialState, action) => {
         case ADD_SONG:
             return { ...state, list: [...state.list, action.newSong] };
         case EDIT_SONG:
-            return { ...state, list: [...state.list, action.editedSong]}
+            const song = state.list.find(song => song.id === action.editedSong.id);
+            song = action.editedSong;
+            return { ...state, list: [...state.list] };
         default:
             return state;
     }
