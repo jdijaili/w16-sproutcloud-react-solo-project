@@ -1,6 +1,9 @@
 const SongDetails = ({ song }) => {
-    return(
-        <p>{song.title}</p>
+    return (
+        <>
+            <p>{song.title}</p>
+            <img src={song.imgUrl}/>
+        </>
     )
 };
 
