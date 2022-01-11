@@ -8,21 +8,21 @@ const ADD_SONG = 'songs/ADD_SONG';
 const EDIT_SONG = 'songs/EDIT_SONG';
 
 // ACTION CREATORS
-export const loadSongs = (songs) => {
+const loadSongs = (songs) => {
     return {
         type: LOAD_SONGS,
         songs
     }
 };
 
-export const addSong = (newSong) => {
+const addSong = (newSong) => {
     return {
         type: ADD_SONG,
         newSong
     }
 }
 
-export const editSong = (song) => {
+const editSong = (song) => {
     return {
         type: EDIT_SONG,
         song
@@ -48,7 +48,17 @@ export const addNewSong = (newSong) => async (dispatch) => {
     return data;
 };
 
+export const editSong = (editedSong) => {
+    const res = await csrfFetch(`/api/songs/${editedSong.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editedSong)
+    });
 
+    const data = await res.json();
+    dispatch(editSong(data));
+    return data;
+};
 
 // INITIAL STATE
 const initialState = {
@@ -57,12 +67,13 @@ const initialState = {
 
 // REDUCER
 const songsReducer = (state = initialState, action) => {
-    // console.log(action)
     switch (action.type) {
         case LOAD_SONGS:
             return { ...state, list: [...action.songs] };
         case ADD_SONG:
-            return { ...state, list: [...state.list, action.newSong] }
+            return { ...state, list: [...state.list, action.newSong] };
+        case EDIT_SONG:
+            return { ...state, list: [...state.list, action.editedSong]}
         default:
             return state;
     }
