@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSongs } from "../../store/songs";
+import SongDetails from "./SongDetails";
 
 const Songs = () => {
     const dispatch = useDispatch();
@@ -14,9 +15,9 @@ const Songs = () => {
 
     return (
         <div>
-            <h2>~Sounds~</h2>
-            {songs.map((song) => (
-                <li>{song.title}</li>
+            <h2>~Songs~</h2>
+            {songs?.map((song) => (
+                <SongDetails key={song.id} song={song}/>
             ))}
         </div>
     );
