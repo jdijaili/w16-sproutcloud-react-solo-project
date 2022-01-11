@@ -23,14 +23,12 @@ export const addSong = (newSong) => {
 // THUNK CREATORS
 export const getAllSongs = () => async (dispatch) => {
     const res = await csrfFetch('/api/songs');
-    // console.log(res);
     const data = await res.json();
-    // console.log(data);
     dispatch(loadSongs(data));
 };
 
 export const addNewSong = (newSong) => async (dispatch) => {
-    const res = await fetch('/api/songs', {
+    const res = await csrfFetch('/api/songs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newSong)
