@@ -4,13 +4,11 @@ import * as sessionActions from '../../store/session';
 
 const Demo = () => {
     const dispatch = useDispatch();
-    const [credential, setCredential] = useState('');
-    const [password, setPassword] = useState('');
 
     const handleClick = (e) => {
         e.preventDefault();
-        setCredential('Demo');
-        setPassword('password');
+        const credential = 'Demo';
+        const password = 'password';
 
         dispatch(sessionActions.login({ credential, password }))
             .catch(async (res) => {

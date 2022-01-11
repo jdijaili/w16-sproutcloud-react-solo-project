@@ -11,12 +11,12 @@ module.exports = {
       },
       {
         email: 'fakeuser1@user.io',
-        username: 'FakeUser1',
+        username: 'sprout',
         hashedPassword: bcrypt.hashSync('password1'),
       },
       {
         email: 'fakeuser2@user.io',
-        username: 'FakeUser2',
+        username: 'Cloud',
         hashedPassword: bcrypt.hashSync('password2'),
       },
     ], {});
