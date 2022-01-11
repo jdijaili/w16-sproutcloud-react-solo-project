@@ -6,7 +6,7 @@ import SongDetails from "./SongDetails";
 const Songs = () => {
     const dispatch = useDispatch();
 
-    const songs = useSelector(state => state.songs);
+    const songs = useSelector(state => state.songs.list);
     console.log(songs);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Songs = () => {
 
     return (
         <div>
-            <h2>~Songs~</h2>
+            <h2>~ Songs ~</h2>
             {songs?.map((song) => (
                 <SongDetails key={song.id} song={song}/>
             ))}

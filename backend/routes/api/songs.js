@@ -8,4 +8,9 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(songs);
 }));
 
+router.post('/', asyncHandler(async (req, res) => {
+    const song = await Song.create(req.body);
+    res.json(song);
+}))
+
 module.exports = router;
