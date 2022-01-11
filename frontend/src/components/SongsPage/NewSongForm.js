@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addNewSong } from "../../store/songs";
 
 const NewSongForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const userId = useSelector(state => state.session.user.id);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -33,13 +35,15 @@ const NewSongForm = () => {
             title,
             description,
             songUrl,
-            imgUrl
+            imgUrl,
+            userId
         };
 
         const createdSong = await dispatch(addNewSong(newSong));
 
         if (createdSong) {
             console.log(createdSong);
+            history.push('/songs');
             // history.push(`songs/${createdSong.id}`);
         }
     };
