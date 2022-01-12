@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { editSong } from "../../store/songs";
@@ -21,8 +21,6 @@ const EditSongForm = ({ id, song, hideForm }) => {
     const updateDescription = (e) => setDescription(e.target.value);
     const updateSongUrl = (e) => setSongUrl(e.target.value);
     const updateImgUrl = (e) => setImgUrl(e.target.value);
-
-    const rerender = () => history.push('/songs');
 
     const handleCancel = () => {
         hideForm();

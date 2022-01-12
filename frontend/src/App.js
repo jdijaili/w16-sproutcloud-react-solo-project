@@ -40,7 +40,7 @@ function App() {
           <Route path="/songs">
             <Songs />
           </Route>
-          <Route path='/songs/:id'>
+          <Route path="/songs/:id">
             <SongDetails songs={songs} />
           </Route>
           <Route path="/upload">
