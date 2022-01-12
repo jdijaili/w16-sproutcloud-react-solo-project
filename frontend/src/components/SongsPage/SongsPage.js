@@ -16,7 +16,7 @@ const Songs = () => {
     return (
         <div>
             <h2>~ Songs ~</h2>
-            {songs?.map((song) => (
+            {songs.map((song) => (
                 <div key={song.id} id={song.id}>
                     <h3>{song.title}</h3>
                     <Link to={`/songs/${song.id}`}>
