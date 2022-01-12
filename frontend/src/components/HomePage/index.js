@@ -21,7 +21,7 @@ const Home = ({ isLoaded }) => {
 
     return (
         <div className='home user'>
-            <h1>Sproutcloud</h1>
+            {/* <h1>Sproutcloud</h1> */}
             {isLoaded && homeContent}
         </div>
     )

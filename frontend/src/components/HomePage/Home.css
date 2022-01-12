@@ -41,6 +41,11 @@ h3 {
     font-family: 'modern_sanslight';
 }
 
+nav {
+    border-bottom: 0.75px solid black;
+    margin-bottom: 10px;
+}
+
 img {
     border: 3px #1b3d2f;
     border-style: dotted dashed solid double;
