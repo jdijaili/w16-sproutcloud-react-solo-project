@@ -13,20 +13,17 @@ router.post('/', asyncHandler(async (req, res) => {
     res.json(newSong);
 }));
 
-router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
-    console.log('!!!!!!!!!!!')
-    const id = req.params.id;
-    console.log(id)
-    const song = await Song.findByPk(id);
-    console.log('@@@@@@@@@')
-    console.log(song);
-    const editedSong = await song.update(req.body);
+router.get('/:id(\\d+)')
 
+router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const song = await Song.findByPk(id);
+    const editedSong = await song.update(req.body);
     res.json(editedSong);
 }));
 
 router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
-    const { id } = req.body;
+    const id = req.params.id;
     const song = await Song.findByPk(id);
     await song.destroy();
 }));

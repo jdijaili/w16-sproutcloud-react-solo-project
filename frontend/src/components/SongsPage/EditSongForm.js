@@ -22,9 +22,7 @@ const EditSongForm = ({ id, song, hideForm }) => {
     const updateSongUrl = (e) => setSongUrl(e.target.value);
     const updateImgUrl = (e) => setImgUrl(e.target.value);
 
-    // useEffect(() => {
-
-    // }, [setTitle,])
+    const rerender = () => history.push('/songs');
 
     const handleCancel = () => {
         hideForm();
@@ -49,8 +47,8 @@ const EditSongForm = ({ id, song, hideForm }) => {
 
         if (song) {
             console.log(song);
-            history.push(`/songs`);
             hideForm();
+            history.push('/');
         }
     };
 
