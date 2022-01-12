@@ -9,6 +9,7 @@ const Home = ({ isLoaded }) => {
         homeContent = (
             <p>hallo</p>
         )
+        // console.log(homeContent);
     } else {
         homeContent = (
             <div className='home general'>

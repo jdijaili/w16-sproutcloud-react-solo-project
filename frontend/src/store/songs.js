@@ -7,6 +7,8 @@ const ADD_SONG = 'songs/ADD_SONG';
 
 const EDIT_SONG = 'songs/EDIT_SONG';
 
+const DELETE_SONG = 'songs/DELETE_SONG';
+
 // ACTION CREATORS
 const loadSongs = (songs) => {
     return {
@@ -29,6 +31,13 @@ const updateSong = (editedSong) => {
     }
 };
 
+const discardSong = (songToDelete) => {
+    return {
+        type: DELETE_SONG,
+        songToDelete
+    }
+}
+
 // THUNK CREATORS
 export const getAllSongs = () => async (dispatch) => {
     const res = await csrfFetch('/api/songs');
@@ -48,8 +57,8 @@ export const addNewSong = (newSong) => async (dispatch) => {
     return data;
 };
 
-export const editSong = (editedSong) => async (dispatch) => {
-    const res = await csrfFetch(`/api/songs/${editedSong.id}`, {
+export const editSong = (editedSong, id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/songs/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editedSong)
@@ -59,6 +68,13 @@ export const editSong = (editedSong) => async (dispatch) => {
     dispatch(updateSong(data));
     return data;
 };
+
+export const deleteSong = (songToDelete) => async (dispatch) => {
+    const res = await csrfFetch(`/api/songs/${songToDelete.id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    })
+}
 
 // INITIAL STATE
 const initialState = {
@@ -73,7 +89,7 @@ const songsReducer = (state = initialState, action) => {
         case ADD_SONG:
             return { ...state, list: [...state.list, action.newSong] };
         case EDIT_SONG:
-            const song = state.list.find(song => song.id === action.editedSong.id);
+            let song = state.list.find(song => song.id === action.editedSong.id);
             song = action.editedSong;
             return { ...state, list: [...state.list] };
         default:

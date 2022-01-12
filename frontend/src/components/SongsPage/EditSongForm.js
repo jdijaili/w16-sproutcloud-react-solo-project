@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addNewSong } from "../../store/songs";
+import { editSong } from "../../store/songs";
 
-const NewSongForm = () => {
+
+const EditSongForm = ({ id, song, hideForm }) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
     const userId = useSelector(state => state.session.user.id);
 
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [songUrl, setSongUrl] = useState('');
-    const [imgUrl, setImgUrl] = useState('');
+    const [title, setTitle] = useState(song.title);
+    const [description, setDescription] = useState(song.description);
+    const [songUrl, setSongUrl] = useState(song.songUrl);
+    const [imgUrl, setImgUrl] = useState(song.imgUrl);
 
     const [errors, setErrors] = useState([]);
 
@@ -21,19 +22,18 @@ const NewSongForm = () => {
     const updateSongUrl = (e) => setSongUrl(e.target.value);
     const updateImgUrl = (e) => setImgUrl(e.target.value);
 
-    const handleCancel = () => {
-        setTitle('');
-        setDescription('');
-        setSongUrl('');
-        setImgUrl('');
+    // useEffect(() => {
 
-        history.push('/songs');
+    // }, [setTitle,])
+
+    const handleCancel = () => {
+        hideForm();
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const newSong = {
+        const editedSong = {
             title,
             description,
             songUrl,
@@ -41,16 +41,16 @@ const NewSongForm = () => {
             userId
         };
 
-        const createdSong = await dispatch(addNewSong(newSong))
+        const song = await dispatch(editSong(editedSong, id))
             .catch(async (res) => {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors);
             });
 
-        if (createdSong) {
-            console.log(createdSong);
-            history.push('/songs');
-            // history.push(`songs/${createdSong.id}`);
+        if (song) {
+            console.log(song);
+            history.push(`/songs`);
+            hideForm();
         }
     };
 
@@ -92,11 +92,11 @@ const NewSongForm = () => {
                     value={imgUrl}
                     onChange={updateImgUrl}
                 />
-                <button type="submit">Create</button>
+                <button type="submit">Save</button>
                 <button onClick={handleCancel}>Cancel</button>
             </form>
         </div>
     )
 }
 
-export default NewSongForm;
+export default EditSongForm;
