@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllSongs } from "../../store/songs";
+import Player from "../AudioPlayer/AudioPlayer";
+import '../AudioPlayer/AudioPlayer.css';
 
 const Songs = () => {
     const dispatch = useDispatch();
@@ -25,6 +27,10 @@ const Songs = () => {
                     {/* <SongDetails key={song.id} song={song} /> */}
                 </div>
             ))}
+
+            <div className='audio-player'>
+                <Player />
+            </div>
         </div>
     );
 };
