@@ -41,11 +41,21 @@ h3 {
     font-family: 'modern_sanslight';
 }
 
+nav {
+    border-bottom: 0.75px solid black;
+    margin-bottom: 10px;
+}
+
 img {
     border: 3px #1b3d2f;
-    border-style: dotted dashed solid double;;
+    border-style: dotted dashed solid double;
 }
 
 span {
     font-family: 'positions_by_arixboredregular';
+}
+
+footer {
+    border-top: 0.75px solid black;
+    font-size: small;
 }

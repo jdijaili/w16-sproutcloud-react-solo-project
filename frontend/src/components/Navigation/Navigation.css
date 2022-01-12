@@ -10,15 +10,30 @@
 nav a {
     margin: 0 20px;
     font-family: 'modern_sanslight';
+    font-weight: bold;
     text-decoration: none;
+    align-self: center;
+}
+
+nav ul {
+    margin: 2px;
 }
 
 nav li {
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
 }
 
 .demo {
     font-family: 'modern_sanslight';
     border-style: none;
     background: none;
+}
+
+#sproutcloud-logo {
+    margin-right: 0;
+    max-height: 50px;
+    border: none;
 }

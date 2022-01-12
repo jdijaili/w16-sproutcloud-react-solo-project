@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import AudioPlayer from "../AudioPlayer";
 import './Home.css'
 
 const Home = ({ isLoaded }) => {
@@ -10,6 +9,7 @@ const Home = ({ isLoaded }) => {
         homeContent = (
             <p>hallo</p>
         )
+        // console.log(homeContent);
     } else {
         homeContent = (
             <div className='home general'>
@@ -20,10 +20,15 @@ const Home = ({ isLoaded }) => {
     }
 
     return (
-        <div className='home user'>
-            <h1>Sproutcloud</h1>
-            {isLoaded && homeContent}
-        </div>
+        <>
+            <div className='home user'>
+                {/* <h1>Sproutcloud</h1> */}
+                {isLoaded && homeContent}
+            </div>
+            <footer className='footer'>
+                <h3>Jennifer Dijaili</h3>
+            </footer>
+        </>
     )
 };
 

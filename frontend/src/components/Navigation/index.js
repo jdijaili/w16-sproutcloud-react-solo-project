@@ -14,6 +14,7 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <NavLink to='/songs'>Songs</NavLink>
+                <h1>Sproutcloud</h1>
                 <NavLink to='/upload'>Upload</NavLink>
                 <ProfileButton user={sessionUser} />
             </>
@@ -22,6 +23,7 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <NavLink to="/login">Log In</NavLink>
+                <h1>Sproutcloud</h1>
                 <NavLink to="/signup">Sign Up</NavLink>
                 <Demo />
             </>
@@ -32,7 +34,9 @@ function Navigation({ isLoaded }) {
         <nav>
             <ul>
                 <li>
-                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink exact to="/">
+                        <img id='sproutcloud-logo' src='https://res.cloudinary.com/jenn/image/upload/v1641965705/sproutcloud/sproutcloud-logo_jjnca9.png' alt='sproutcloud logo'/>
+                    </NavLink>
                     {isLoaded && sessionLinks}
                 </li>
             </ul>

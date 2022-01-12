@@ -13,4 +13,19 @@ router.post('/', asyncHandler(async (req, res) => {
     res.json(newSong);
 }));
 
+router.get('/:id(\\d+)')
+
+router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const song = await Song.findByPk(id);
+    const editedSong = await song.update(req.body);
+    res.json(editedSong);
+}));
+
+router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const song = await Song.findByPk(id);
+    await song.destroy();
+}));
+
 module.exports = router;
