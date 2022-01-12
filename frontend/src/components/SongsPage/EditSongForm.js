@@ -46,7 +46,7 @@ const EditSongForm = ({ id, song, hideForm }) => {
         if (song) {
             console.log(song);
             hideForm();
-            history.push('/');
+            history.push('/songs');
         }
     };
 

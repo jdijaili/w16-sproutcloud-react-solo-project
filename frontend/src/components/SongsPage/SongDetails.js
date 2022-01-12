@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
+import { deleteSong } from '../../store/songs';
 import EditSongForm from './EditSongForm';
 import './SongDetail.css';
 
 const SongDetails = ({ songs }) => {
     const { id } = useParams();
-    const song = songs.find(song => song.id === id);
+    const song = songs.find(song => song.id === +id);
 
-    console.log(song);
-
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [showEditForm, setShowEditForm] = useState(false);
 
     let content = null;
@@ -21,7 +22,9 @@ const SongDetails = ({ songs }) => {
     const handleDelete = (e) => {
         const id = e.target.value;
         console.log(id);
-        // dispatch()
+        const deletedSong = dispatch(deleteSong(id));
+
+        if (deletedSong) history.push('/songs');
     };
 
     return (
