@@ -54,3 +54,8 @@ img {
 span {
     font-family: 'positions_by_arixboredregular';
 }
+
+footer {
+    border-top: 0.75px solid black;
+    font-size: small;
+}

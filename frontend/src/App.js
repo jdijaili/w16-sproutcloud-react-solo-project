@@ -41,10 +41,13 @@ function App() {
             <Songs />
           </Route>
           <Route path='/songs/:id'>
-            <SongDetails songs={songs}/>
+            <SongDetails songs={songs} />
           </Route>
           <Route path="/upload">
             <NewSongForm />
+          </Route>
+          <Route>
+            <h2>Page Not Found</h2>
           </Route>
         </Switch>
       )}
