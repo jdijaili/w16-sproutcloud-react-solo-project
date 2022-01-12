@@ -96,8 +96,8 @@ const songsReducer = (state = initialState, action) => {
             song = action.editedSong;
             return { ...state, list: [...state.list] };
         case DELETE_SONG:
-            const newState = { ...state };
-            delete newState.list[action.id];
+            let newState = Object.assign({}, state);
+            newState.song = null;
             return newState;
         default:
             return state;
