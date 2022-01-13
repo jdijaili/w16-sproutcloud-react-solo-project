@@ -9,6 +9,8 @@ const EDIT_SONG = 'songs/EDIT_SONG';
 
 const DELETE_SONG = 'songs/DELETE_SONG';
 
+const GET_USER_SONGS = 'songs/GET_USER_SONGS';
+
 // ACTION CREATORS
 const loadSongs = (songs) => {
     return {
@@ -35,6 +37,13 @@ const discardSong = (id) => {
     return {
         type: DELETE_SONG,
         id
+    }
+}
+
+const loadUserSongs = (userSongs) => {
+    return {
+        type: GET_USER_SONGS,
+        userSongs
     }
 }
 
@@ -77,7 +86,14 @@ export const deleteSong = (songId) => async (dispatch) => {
     const data = await res.json();
     dispatch(discardSong(data));
     return data;
-}
+};
+
+export const getUserSongs = (userId) => async (dispatch) => {
+    const res = await csrfFetch(`/users/${userId}/songs`);
+    const data = await res.json();
+    dispatch(loadUserSongs(data));
+    return data;
+};
 
 // INITIAL STATE
 const initialState = {
@@ -99,6 +115,8 @@ const songsReducer = (state = initialState, action) => {
             let newState = Object.assign({}, state);
             newState.song = null;
             return newState;
+        case GET_USER_SONGS:
+            return { ...state, mySongs: [...action.userSongs] }
         default:
             return state;
     }

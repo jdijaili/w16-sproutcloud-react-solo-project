@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Song } = require('../../db/models');
 
 const router = express.Router();
 
@@ -41,5 +41,19 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
     });
 }),
 );
+
+router.get('/:id(\\d+)/songs', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.logI(id)
+
+    const userSongs = await User.findByPk(id, { include: Song })
+
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.log(userSongs)
+
+    res.json(userSongs);
+}))
 
 module.exports = router;

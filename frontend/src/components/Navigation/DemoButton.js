@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session';
 
@@ -12,8 +11,7 @@ const Demo = () => {
 
         dispatch(sessionActions.login({ credential, password }))
             .catch(async (res) => {
-                const data = await res.json();
-            });
+                const data = await res.json();});
     };
 
     return (

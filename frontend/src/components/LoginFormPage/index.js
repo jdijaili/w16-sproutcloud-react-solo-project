@@ -26,30 +26,38 @@ function LoginFormPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <div className='pageDiv'>
+      <div className='formDiv'>
+        <h2>Log into your account</h2>
+        <form onSubmit={handleSubmit} className='form'>
+          <ul>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
+          <label>
+            Username or Email
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+      <div className='cloudImgDiv'>
+        <img className='cloudImg' alt='clouds' src='https://res.cloudinary.com/jenn/image/upload/v1642060726/sproutcloud/Untitled_Artwork_2_mvqwgp.jpg'/>
+      </div>
+    </div>
   );
 }
 

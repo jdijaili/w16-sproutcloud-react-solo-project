@@ -59,7 +59,7 @@ const NewSongForm = () => {
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='form'>
                 <label htmlFor='title'>Title</label>
                 <input
                     id='title'

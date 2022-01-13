@@ -13,8 +13,9 @@ nav a {
     font-weight: bold;
     text-decoration: none;
     align-self: center;
+    color: black;
 }
-
+/*
 nav ul {
     margin: 2px;
 }
@@ -24,6 +25,27 @@ nav li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
+} */
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 0;
+}
+
+.navbar-session {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    max-height: 60px;
+    width: 100%;
+}
+
+.nav-grid {
+    display: flex;
+    justify-content: center;
 }
 
 .demo {
