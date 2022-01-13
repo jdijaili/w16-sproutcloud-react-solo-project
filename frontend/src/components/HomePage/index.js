@@ -9,7 +9,7 @@ const Home = ({ isLoaded }) => {
 
     useEffect(() => {
         dispatch(getUserSongs(sessionUser.id));
-    }, [])
+    }, [sessionUser]);
 
     let homeContent;
     if (sessionUser) {
