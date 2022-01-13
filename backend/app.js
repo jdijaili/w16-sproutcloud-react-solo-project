@@ -21,9 +21,7 @@ if (!isProduction) {
     app.use(cors());
 }
 
-app.use(helmet({
-    contentSecurityPolicy: false
-}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 app.use(
     csurf({
