@@ -45,13 +45,7 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
 router.get('/:id(\\d+)/songs', asyncHandler(async (req, res) => {
     const id = req.params.id;
 
-    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
-    console.logI(id)
-
-    const userSongs = await User.findByPk(id, { include: Song })
-
-    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
-    console.log(userSongs)
+    const userSongs = await User.findByPk(id, { include: Song });
 
     res.json(userSongs);
 }))

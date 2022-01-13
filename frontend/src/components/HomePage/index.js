@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { getUserSongs } from "../../store/songs";
 import './Home.css'
 
@@ -7,16 +8,26 @@ const Home = ({ isLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
 
-    useEffect(() => {
+
+
+    useEffect(()=> {
         dispatch(getUserSongs(sessionUser.id));
-    }, [sessionUser]);
+    }, [dispatch])
+
+    const userSongs = useSelector(state => state.songs.mySongs)
+    console.log('!@@$#%^!%&^%&^%!!')
+    console.log(userSongs)
 
     let homeContent;
     if (sessionUser) {
+
+
         homeContent = (
-            <p>hallo</p>
+            <div>
+                <h3>Welcome to Sproutcloud</h3>
+                <h3>A place to provide the vibiest music to </h3>
+            </div>
         )
-        // console.log(homeContent);
     } else {
         homeContent = (
             <div className='home general'>

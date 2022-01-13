@@ -89,7 +89,8 @@ export const deleteSong = (songId) => async (dispatch) => {
 };
 
 export const getUserSongs = (userId) => async (dispatch) => {
-    const res = await csrfFetch(`/users/${userId}/songs`);
+    console.log(userId)
+    const res = await fetch(`/api/users/${userId}/songs`);
     const data = await res.json();
     dispatch(loadUserSongs(data));
     return data;
@@ -116,7 +117,9 @@ const songsReducer = (state = initialState, action) => {
             newState.song = null;
             return newState;
         case GET_USER_SONGS:
-            return { ...state, mySongs: [...action.userSongs] }
+            console.log('@@@@@@@@@@@@@@@@@@@@@')
+            console.log(action.userSongs)
+            return { ...state, mySongs: [...action.userSongs.Songs] }
         default:
             return state;
     }
