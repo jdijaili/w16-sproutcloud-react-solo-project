@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addNewSong } from "../../store/songs";
+import './NewSongForm.css';
 
 const NewSongForm = () => {
     const dispatch = useDispatch();
@@ -55,42 +56,43 @@ const NewSongForm = () => {
     };
 
     return (
-        <div>
+        <div className='newSongPage'>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <form onSubmit={handleSubmit} className='form'>
-                <label htmlFor='title'>Title</label>
+                <h2>Upload a New Song</h2>
                 <input
                     id='title'
                     type='text'
                     required
                     value={title}
                     onChange={updateTitle}
+                    placeholder='Title'
                 />
-                <label htmlFor='description'>Description</label>
                 <textarea
                     id='description'
                     type='text'
                     required
                     value={description}
                     onChange={updateDescription}
+                    placeholder='Description'
                 />
-                <label htmlFor='songUrl'>Song Link</label>
                 <input
                     id='songUrl'
                     type='text'
                     required
                     value={songUrl}
                     onChange={updateSongUrl}
+                    placeholder='Song Link'
                 />
-                <label htmlFor='imgUrl'>Image Link</label>
                 <input
                     id='imgUrl'
                     type='text'
                     required
                     value={imgUrl}
                     onChange={updateImgUrl}
+                    placeholder='Image Link'
                 />
                 <button type="submit">Create</button>
                 <button onClick={handleCancel}>Cancel</button>

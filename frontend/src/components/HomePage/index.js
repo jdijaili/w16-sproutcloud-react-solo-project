@@ -1,36 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserSongs } from "../../store/songs";
+import { useSelector } from "react-redux";
 import './Home.css'
 
 const Home = ({ isLoaded }) => {
-    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    console.log(1)
-
-    useEffect(()=> {
-        if (sessionUser) dispatch(getUserSongs(sessionUser.id));
-    }, [dispatch, sessionUser])
-
-    const userSongs = useSelector(state => {
-        return state.songs.mySongs
-    })
-    console.log('$$$$$$$$$$$$$$$$$$')
-    console.log(userSongs)
 
     let homeContent;
     if (sessionUser) {
-
-
         homeContent = (
             <div>
                 <h3>Welcome to Sproutcloud</h3>
                 <h3>A place to provide the vibiest music to </h3>
-                {userSongs?.map(song => {
-                    <div>
-                         <p>{song.title}</p>
-                    </div>
-                })}
             </div>
         )
     } else {
@@ -45,7 +24,6 @@ const Home = ({ isLoaded }) => {
     return (
         <>
             <div className='home user'>
-                {/* <h1>Sproutcloud</h1> */}
                 {isLoaded && homeContent}
             </div>
             <footer className='footer'>

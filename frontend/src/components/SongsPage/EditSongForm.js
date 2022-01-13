@@ -56,37 +56,41 @@ const EditSongForm = ({ id, song, hideForm }) => {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <form onSubmit={handleSubmit} className='form'>
-                <label htmlFor='title'>Title</label>
+                <h2>Edit Song</h2>
                 <input
                     id='title'
                     type='text'
                     required
                     value={title}
                     onChange={updateTitle}
+                    placeholder='Title'
                 />
-                <label htmlFor='description'>Description</label>
+
                 <textarea
                     id='description'
                     type='text'
                     required
                     value={description}
                     onChange={updateDescription}
+                    placeholder='Description'
                 />
-                <label htmlFor='songUrl'>Song Link</label>
+
                 <input
                     id='songUrl'
                     type='text'
                     required
                     value={songUrl}
                     onChange={updateSongUrl}
+                    placeholder='Song Link'
                 />
-                <label htmlFor='imgUrl'>Image Link</label>
+
                 <input
                     id='imgUrl'
                     type='text'
                     required
                     value={imgUrl}
                     onChange={updateImgUrl}
+                    placeholder='Image Link'
                 />
                 <button type="submit">Save</button>
                 <button onClick={handleCancel}>Cancel</button>

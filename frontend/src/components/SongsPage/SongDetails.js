@@ -40,13 +40,13 @@ const SongDetails = ({ songs }) => {
 
 
     return (
-        <>
+        <div>
             <p>{song.title}</p>
             <p>{song.User.username}</p>
             <img className='songArt' alt={`${song.title}'s art`} src={song.imgUrl} />
             {userActions}
             {form}
-        </>
+        </div>
     );
 };
 

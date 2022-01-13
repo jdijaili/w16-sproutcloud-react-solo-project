@@ -1,6 +1,20 @@
-.pageDiv {
+.signUpPage {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+}
+
+.contentDiv {
+    display: flex;
+    align-items: center;
+}
+
+.signUpHeader {
+    text-align: center;
+}
+
+.form {
+    height: fit-content;
+    margin-right: 50px;
 }
 
 .riverImgDiv {
@@ -10,6 +24,6 @@
 
 
 .riverImg {
-    height: 875px;
+    height: 800px;
     margin: 20px 30px;
 }

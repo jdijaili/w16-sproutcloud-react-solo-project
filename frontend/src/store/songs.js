@@ -117,8 +117,6 @@ const songsReducer = (state = initialState, action) => {
             newState.song = null;
             return newState;
         case GET_USER_SONGS:
-            console.log('@@@@@@@@@@@@@@@@@@@@@')
-            console.log(action.userSongs)
             return { ...state, mySongs: [...action.userSongs.Songs] }
         default:
             return state;
