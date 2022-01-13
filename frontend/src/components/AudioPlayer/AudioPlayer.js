@@ -1,10 +1,14 @@
-import AudioPlayer from 'react-h5-audio-player';
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css';
 
-const Player = () => (
+const Player = ({ songUrl }) => (
   <AudioPlayer
-    src="https://res.cloudinary.com/jenn/video/upload/v1641881299/sproutcloud/db%20test%20songs/Ketsa_-_A_Box_Of_Delights_qervqh.mp3"
+    src={songUrl}
     onPlay={e => console.log("onPlay")}
+    showVolume={false}
+    showJumpControls={false}
+    layout='horizontal-reverse'
+    customControlsSection={[RHAP_UI.MAIN_CONTROLS]}
   // other props here
   />
 );

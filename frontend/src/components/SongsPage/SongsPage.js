@@ -24,13 +24,11 @@ const Songs = () => {
                     <Link to={`/songs/${song.id}`}>
                         <img className='songArt' alt={`${song.title}'s art`} src={song.imgUrl} />
                     </Link>
-                    {/* <SongDetails key={song.id} song={song} /> */}
+                    <div className='audio-player'>
+                    <Player songUrl={song.songUrl} />
+                    </div>
                 </div>
             ))}
-
-            <div className='audio-player'>
-                <Player />
-            </div>
         </div>
     );
 };
