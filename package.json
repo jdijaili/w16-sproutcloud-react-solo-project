@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jdijaili/w16-plantcloud-react-solo-project#readme",
   "dependencies": {
+    "react-h5-audio-player": "^3.8.1",
     "react-icons": "^4.3.1"
   }
 }
