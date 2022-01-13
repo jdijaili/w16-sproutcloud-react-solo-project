@@ -1,0 +1,15 @@
+.pageDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.riverImgDiv {
+    border-left: 0.75px solid black;
+    padding-left: 20px;
+}
+
+
+.riverImg {
+    height: 875px;
+    margin: 20px 30px;
+}
