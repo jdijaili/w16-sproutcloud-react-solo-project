@@ -1,8 +1,15 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserSongs } from "../../store/songs";
 import './Home.css'
 
 const Home = ({ isLoaded }) => {
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+
+    useEffect(() => {
+        dispatch(getUserSongs(sessionUser.id));
+    }, [])
 
     let homeContent;
     if (sessionUser) {

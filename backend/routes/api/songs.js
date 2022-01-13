@@ -8,12 +8,30 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(songs);
 }));
 
+
+router.get('/:id(\\d+)/songs', asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.logI(id)
+
+    const userSongs = await Song.findAll({
+        where: {
+            userId: id
+        }
+    });
+
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.log(userSongs)
+
+    res.json(userSongs);
+}))
+
+
 router.post('/', asyncHandler(async (req, res) => {
     const newSong = await Song.create(req.body);
     res.json(newSong);
 }));
-
-router.get('/:id(\\d+)')
 
 router.put('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = req.params.id;
@@ -27,5 +45,6 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
     const song = await Song.findByPk(id);
     await song.destroy();
 }));
+
 
 module.exports = router;

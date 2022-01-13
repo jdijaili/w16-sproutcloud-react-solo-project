@@ -42,6 +42,11 @@ module.exports = (sequelize, DataTypes) => {
         len: {
           args: [1, 255],
           msg: 'Song url must not be more than 255 characters'
+        },
+        isAnMp3(value) {
+          if (!value.endsWith('.mp3')) {
+            throw new Error('Song url must end with ".mp3"')
+          }
         }
       }
     },
@@ -58,6 +63,11 @@ module.exports = (sequelize, DataTypes) => {
         len: {
           args: [1, 255],
           msg: 'Image url must not be more than 255 characters'
+        },
+        isAnImg(value) {
+          if (!value.endsWith('.jpg')) {
+            throw new Error('Image url must end with ".jpg"')
+          }
         }
       }
     },
