@@ -52,11 +52,11 @@ const EditSongForm = ({ id, song, hideForm }) => {
 
     return (
         <div>
-            <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
             <form onSubmit={handleSubmit} className='form'>
-                <h3>Edit Song</h3>
+                <h2>Edit Song</h2>
+                <ul>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
                 <input
                     id='title'
                     type='text'

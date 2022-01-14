@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         isAnMp3(value) {
           if (!value.endsWith('.mp3')) {
-            throw new Error('Song url must end with ".mp3"')
+            throw new Error('Song url must be a valid link')
           }
         }
       }
@@ -66,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         isAnImg(value) {
           if (!value.endsWith('.jpg')) {
-            throw new Error('Image url must end with ".jpg"')
+            throw new Error('Image url must be a valid link')
           }
         }
       }
