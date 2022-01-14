@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'stormline_personal_use_onlyMd';
     src: url('../../../public/fonts/stormline_personal_use_only-medium-webfont.woff2') format('woff2'),
-         url('../../../public/fonts/stormline_personal_use_only-medium-webfont.woff') format('woff');
+        url('../../../public/fonts/stormline_personal_use_only-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'modern_sanslight';
     src: url('../../../public/fonts/modernsans-light-webfont.woff2') format('woff2'),
-         url('../../../public/fonts/modernsans-light-webfont.woff') format('woff');
+        url('../../../public/fonts/modernsans-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -19,7 +19,25 @@
 @font-face {
     font-family: 'positions_by_arixboredregular';
     src: url('../../../public/fonts/positionsbyarixbored-regular_-webfont.woff2') format('woff2'),
-         url('../../../public/fonts/positionsbyarixbored-regular_-webfont.woff') format('woff');
+        url('../../../public/fonts/positionsbyarixbored-regular_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'creamdemo';
+    src: url('../../../public/fonts/cream-demo-webfont.woff2') format('woff2'),
+        url('../../../public/fonts/cream-demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'quicksandbook';
+    src: url('../../../public/fonts/quicksand_book-webfont.woff2') format('woff2'),
+        url('../../../public/fonts/quicksand_book-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -37,9 +55,30 @@ h1 {
     font-family: "stormline_personal_use_onlyMd";
 }
 
+h2 {
+    font-family: 'creamdemo';
+}
+
 h3 {
     font-family: 'modern_sanslight';
 }
+
+p {
+    font-family: 'quicksandbook';
+}
+
+button {
+    background-color: #a5c46d; /* Green */
+    border: none;
+    border-radius: 15px;
+    padding: 15px 15px;
+    margin: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'creamdemo';
+    font-size: 16px;
+  }
 
 nav {
     border-bottom: 0.75px solid black;
@@ -49,6 +88,14 @@ nav {
 img {
     border: 3px #1b3d2f;
     border-style: dotted dashed solid double;
+}
+
+input {
+    font-family: 'quicksandbook';
+}
+
+textarea {
+    font-family: 'quicksandbook';
 }
 
 span {
