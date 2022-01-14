@@ -10,7 +10,7 @@ const Home = ({ isLoaded }) => {
             <div className='home-page'>
                 <div className='home-text'>
                     <h3 className='intro'>Welcome to Sproutcloud</h3>
-                    <h3 className='intro'>Plants are remarkable living orgnaisms. They can perceive light, scent, touch, wind, even gravity, and are able to respond to sounds, too. Music has shown to be beneficial to plants, allowing them to grow stronger over time.</h3>
+                    <h3 className='intro'>Plants are remarkable living organisms. They can perceive light, scent, touch, wind, even gravity, and are able to respond to sounds, too. Music has shown to be beneficial to plants, allowing them to grow stronger over time.</h3>
                     <h3 className='intro'>So sit back, unwind, and let your plants indulge in the harmonic sounds of Sproutcloud</h3>
                 </div>
                 <img className='home-img' alt='indoor plants' src='https://res.cloudinary.com/jenn/image/upload/v1642116927/sproutcloud/gemma-evans-IpmjvugXKVw-unsplash_jdito5.jpg' />
