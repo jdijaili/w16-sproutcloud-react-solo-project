@@ -1,0 +1,13 @@
+.profile-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 15px;
+
+}
+
+.profile-list {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20%;
+}

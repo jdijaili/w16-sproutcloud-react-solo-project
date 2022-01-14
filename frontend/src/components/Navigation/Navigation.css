@@ -15,17 +15,6 @@ nav a {
     align-self: center;
     color: black;
 }
-/*
-nav ul {
-    margin: 2px;
-}
-
-nav li {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-} */
 
 .navbar {
     display: flex;
