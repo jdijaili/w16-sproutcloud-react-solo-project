@@ -1,6 +1,14 @@
+@font-face {
+    font-family: 'modern_sanslight';
+    src: url('../../../public/fonts/modernsans-light-webfont.woff2') format('woff2'),
+        url('../../../public/fonts/modernsans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .profile-dropdown {
     position: absolute;
-    top: 40px;
+    top: 55px;
     right: 15px;
 
 }
@@ -10,4 +18,8 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 20%;
+}
+
+li {
+    font-family: 'modern_sanslight';
 }
