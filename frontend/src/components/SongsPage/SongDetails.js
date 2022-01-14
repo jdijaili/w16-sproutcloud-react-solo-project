@@ -40,12 +40,17 @@ const SongDetails = ({ songs }) => {
 
 
     return (
-        <div>
-            <p>{song.title}</p>
-            <p>{song.User.username}</p>
-            <img className='songArt' alt={`${song.title}'s art`} src={song.imgUrl} />
-            {userActions}
-            {form}
+        <div className='songDetailPage'>
+            <div className='details'>
+                <img className='songArt' alt={`${song.title}'s art`} src={song.imgUrl} />
+                <div>
+                    <h2>{song.title}</h2>
+                    <h3>{song.User.username}</h3>
+                    <p>{song.description}</p>
+                    {userActions}
+                    {form}
+                </div>
+            </div>
         </div>
     );
 };

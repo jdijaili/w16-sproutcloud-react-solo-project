@@ -57,6 +57,7 @@ const NewSongForm = () => {
 
     return (
         <div className='newSongPage'>
+            <img className='pothosBanner' alt='pothos' src='https://res.cloudinary.com/jenn/image/upload/v1642110248/sproutcloud/hanging-plant-pothos-decorative-banner_ttifcx.png'/>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>

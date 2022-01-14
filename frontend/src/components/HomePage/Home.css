@@ -57,5 +57,37 @@ span {
 
 footer {
     border-top: 0.75px solid black;
-    font-size: small;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.home-page {
+    margin: 40px 150px;
+    display: flex;
+}
+
+.home-text {
+    font-size: 25px;
+    width: 70%;
+}
+
+.intro {
+    margin-bottom: 100px;
+}
+
+.home-img {
+    height: 30%;
+    width: 30%;
+    margin-left: 100px;
+}
+
+.splash-img {
+    height: 92%;
+    width: 92%;
+}
+
+.github-icon, .linkedin-icon {
+    border: none;
 }
